@@ -145,8 +145,9 @@ export function compoundInterestWithRegularContributions(principalInvestment=nul
   // Calculate future value using the formula
   let FV = P * Math.pow((1 + r), n) + PMT * ((Math.pow((1 + r), n + 1) - 1) / r) * (1 + r);
   
-  return FV;
+  return FV.toFixed(2);
 }
+// console.log(compoundInterestWithRegularContributions(200000,10,5000,20))
 
 
 /**
@@ -198,11 +199,11 @@ export function retirementSavingsTarget(desiredAnnualRetirementIncome =null,  ex
     return undefined;
   }
   
-  return (valueOfAsset / totalPortfolioValue) * 100;
+  return ((valueOfAsset / totalPortfolioValue) * 100).toFixed(2);
 
 }
 
-// console.log(assetAllocationPercentage(50000, 200000));
+// console.log(assetAllocationPercentage(20000000, 97000000));
 // console.log(savingsRate(50000, 100000));
 // console.log(retirementSavingsTarget(2400000, 10));
 // console.log(emergencyFundTarget(50000, 10));
