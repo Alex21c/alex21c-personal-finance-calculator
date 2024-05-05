@@ -150,59 +150,143 @@ Last year By swing trading in stock market (NSE Equity) with capital of ₹20000
 ```
 
 
-## Example #6: title
+## Example #6: Future Value of a Single Sum (lumpsum)
 ```javascript
-code
+import {futureValueOfLumpSum} from "alex21c-personal-finance-calculator";
+
+/**
+ * 6. Future Value of a Single Sum (lumpsum):
+ *  FV = PV * (1 + r/100)^n
+ *  Where:
+ *  - FV is the future value of the investment
+ *  - PV is the present value or initial investment
+ *  - r is the annual interest rate 
+ *  - n is the number of years
+ *  - Calculates the future value of a lump sum investment after a certain number of years.
+ * @param {number} presentValue : e.g. ₹2 Lakh
+ * @param {number} annualInterestRate : e.g. 10%
+ * @param {number} numberOfYears : e.g. 10
+ * @returns {number | undefined} future value
+ */
+
+let presentValue = 200000; // ₹2 lakhs
+let annualInterestRate = 10; // 10%
+let numberOfYears= 10; 
+let output = `i will get ₹${futureValueOfLumpSum(presentValue, annualInterestRate, numberOfYears)}, if i invest my ₹${presentValue} in stock market for next ${numberOfYears} years, getting compounded ${annualInterestRate}% interest per year`;
+console.log(output);
 ````
 ### OUTPUT:
 ```
-output
+i will get ₹518748.49, if i invest my ₹200000 in stock market for next 10 years, getting compounded 10% interest per year
 ```
 
 
-## Example #7: title
+## Example #7: Compound Interest with Regular Contributions
 ```javascript
-code
+import {compoundInterestWithRegularContributions} from "alex21c-personal-finance-calculator";
+
+/**
+ * 7. Compound Interest with Regular Contributions:
+ *   FV = P * Math.pow((1 + r), n) + PMT * ((Math.pow((1 + r), n + 1) - 1) / r) * (1 + r);
+ *  Where:
+ *  - FV is the future value
+ *  - P is the principal investment
+ *  - r is the interest rate per year
+ *  - n is the number of years
+ *  - PMT is regular Contribution per month
+ *  - Determines the future value of investments with regular contributions.
+ * @param {number} principalInvestment : e.g. ₹2 Lakh
+ * @param {number} interestRatePerYear : e.g. 10%
+ * @param {number} regularContribution : e.g. ₹5000 Montly contribution
+ * @param {number} numberOfYears : e.g. 20 years
+ * @returns {number | undefined} future value
+ */
+let principalInvestment = 200000; //₹2 lakh
+let interestRatePerYear= 10; //10%
+let regularContribution= 5000; //₹5000
+let numberOfYears=20; 
+let output = `My initial investment of ₹${principalInvestment}, will become ₹${compoundInterestWithRegularContributions(principalInvestment,interestRatePerYear,regularContribution, numberOfYears)} after ${numberOfYears} years, iff i kept investing ₹${regularContribution} every month, and getting annual compounded return of ${interestRatePerYear}%`;
+console.log(output);
 ````
 ### OUTPUT:
 ```
-output
+My initial investment of ₹200000, will become ₹1697513.74 after 20 years, iff i kept investing ₹5000 every month, and getting annual compounded return of 10%
 ```
 
 
-## Example #8: title
+## Example #8: Retirement Savings Target
 ```javascript
-code
+import {retirementSavingsTarget} from "alex21c-personal-finance-calculator";
+
+/**
+ * 8. Retirement Savings Target:
+ *  Retirement Savings Target = desired Annual Retirement Income / Expected Investment Return Rate
+ *  - Determines the target amount to be saved for retirement.
+ * @param {number} desiredAnnualRetirementIncome : e.g. ₹24 Lakhs
+ * @param {number} expectedInvestmentReturnRate : e.g. 10%
+ : e.g. 10%
+ * @returns {number | undefined} Retirement Savings Target
+ */
+
+ let desiredAnnualRetirementIncome= 2400000; // ₹24 Lakhs
+ let expectedInvestmentReturnRate=7; //7%
+
+let output = `My Retirement savings target needs to be ₹${retirementSavingsTarget(desiredAnnualRetirementIncome, expectedInvestmentReturnRate)}, if i want to have ₹${desiredAnnualRetirementIncome}/year after retirement, assuming my investments keep giving ${expectedInvestmentReturnRate}% annual return after my retirement.`;
+console.log(output);
 ````
 ### OUTPUT:
 ```
-output
+My Retirement savings target needs to be ₹34285714, if i want to have ₹2400000/year after retirement, assuming my investments keep giving 7% annual return after my retirement.
 ```
 
 
-## Example #9: title
+## Example #9: Savings Rate
 ```javascript
-code
+import {savingsRate} from "alex21c-personal-finance-calculator";
+
+/**
+ * 9. Savings Rate:
+ *  Savings Rate = (Amount Saved or Invested / Total Income) × 100%
+ *  - Calculates the percentage of income saved or invested regularly.
+ * @param {number} amountSavedOrInvested : e.g. ₹50,000/-
+ * @param {number} totalIncome : e.g. ₹1 Lakh Lakhs/-
+ * @returns {number | undefined} Savings Rate in percent
+ */
+let amountSavedOrInvested=900000;
+let totalIncome=1200000;
+
+let output = `I have invested ${savingsRate(amountSavedOrInvested, totalIncome)}% (₹${amountSavedOrInvested}) of my total income: ₹${totalIncome}`;
+console.log(output);
 ````
 ### OUTPUT:
 ```
-output
+I have invested 75% (₹900000) of my total income: ₹1200000
 ```
 
 
-## Example #10: title
+## Example #10: Asset Allocation Percentage
 ```javascript
-code
+import {assetAllocationPercentage} from "alex21c-personal-finance-calculator";
+
+/**
+ * 10. Asset Allocation Percentage:
+ *  Allocation Percentage = (Value of Asset / Total Portfolio Value) × 100%
+ *  - Helps in determining the proportion of assets to be allocated to different investment types.
+ * @param {number} valueOfAsset : e.g. ₹50,000/-
+ * @param {number} totalPortfolioValue : e.g. ₹2 Lakhs
+ * @returns {number | undefined} Allocation Percentage
+ */
+let valueOfAsset = 200000000; //₹20 Cr
+let totalPortfolioValue = 970000000; //₹ 97Cr
+let output = `i have invested ₹${valueOfAsset} in Gold which is ${assetAllocationPercentage(valueOfAsset, totalPortfolioValue)}% of my total portfolio (₹${totalPortfolioValue})`;
+console.log(output);
 ````
 ### OUTPUT:
 ```
-output
+i have invested ₹200000000 in Gold which is 20.62% of my total portfolio (₹970000000)
 ```
 
-
-
-
-  
+ 
 ## Author
 [Abhishek kumar](https://www.linkedin.com/in/alex21c/), ([Geekster](https://geekster.in/) MERN Stack FS-14 Batch)
 
@@ -221,90 +305,6 @@ output
 
 
 
-/**
- * 7. Compound Interest with Regular Contributions:
- *   FV = P * Math.pow((1 + r), n) + PMT * ((Math.pow((1 + r), n + 1) - 1) / r) * (1 + r);
- *  Where:
- *  - FV is the future value
- *  - P is the principal investment
- *  - r is the interest rate per year
- *  - n is the number of years
- *  - PMT is regular Contribution per month
- *  - Determines the future value of investments with regular contributions.
- * @param {number} principalInvestment : e.g. ₹2 Lakh
- * @param {number} interestRatePerYear : e.g. 10%
- * @param {number} regularContribution : e.g. ₹5000 Montly contribution
- * @param {number} numberOfYears : e.g. 20 years
- * @returns {number | undefined} future value
- */
-export function compoundInterestWithRegularContributions(principalInvestment=null, interestRatePerYear=null, regularContribution=null, numberOfYears=null){
-  if(principalInvestment == null || interestRatePerYear == null || regularContribution == null || numberOfYears == null){
-    return undefined;
-  }
-  
-  interestRatePerYear = interestRatePerYear / 100; // Convert interest rate to decimal
-  
-  let r = interestRatePerYear;
-  let n = numberOfYears;
-  let P = principalInvestment;
-  let PMT = regularContribution;
-  
-  // Calculate future value using the formula
-  let FV = P * Math.pow((1 + r), n) + PMT * ((Math.pow((1 + r), n + 1) - 1) / r) * (1 + r);
-  
-  return FV;
-}
 
 
-/**
- * 8. Retirement Savings Target:
- *  Retirement Savings Target = desired Annual Retirement Income / Expected Investment Return Rate
- *  - Determines the target amount to be saved for retirement.
- * @param {number} desiredAnnualRetirementIncome : e.g. ₹24 Lakhs
- * @param {number} expectedInvestmentReturnRate : e.g. 10%
- : e.g. 10%
- * @returns {number | undefined} Retirement Savings Target
- */
-export function retirementSavingsTarget(desiredAnnualRetirementIncome =null,  expectedInvestmentReturnRate =null){
-  if(desiredAnnualRetirementIncome ==null || expectedInvestmentReturnRate ==null){
-    return undefined;
-  }
-  
-  return Math.floor(desiredAnnualRetirementIncome / (expectedInvestmentReturnRate/100));
 
-}
-
-
-/**
- * 9. Savings Rate:
- *  Savings Rate = (Amount Saved or Invested / Total Income) × 100%
- *  - Calculates the percentage of income saved or invested regularly.
- * @param {number} amountSavedOrInvested : e.g. ₹50,000/-
- * @param {number} totalIncome : e.g. ₹1 Lakh Lakhs/-
- * @returns {number | undefined} Savings Rate in percent
- */
- export function savingsRate(amountSavedOrInvested =null , totalIncome=null){
-  if(amountSavedOrInvested ==null || totalIncome==null){
-    return undefined;
-  }
-  
-  return (amountSavedOrInvested / totalIncome) * 100;
-
-}
-
-/**
- * 10. Asset Allocation Percentage:
- *  Allocation Percentage = (Value of Asset / Total Portfolio Value) × 100%
- *  - Helps in determining the proportion of assets to be allocated to different investment types.
- * @param {number} valueOfAsset : e.g. ₹50,000/-
- * @param {number} totalPortfolioValue : e.g. ₹2 Lakhs
- * @returns {number | undefined} Allocation Percentage
- */
- export function assetAllocationPercentage(valueOfAsset =null , totalPortfolioValue=null){
-  if(valueOfAsset ==null || totalPortfolioValue==null){
-    return undefined;
-  }
-  
-  return (valueOfAsset / totalPortfolioValue) * 100;
-
-}
