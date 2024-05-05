@@ -2,7 +2,7 @@
   "name": "alex21c-personal-finance-calculator",
   "version": "1.0.0",
   "description": "this package will help you in personal finance like, Rule of 72: how much years it would take yours investments to double, Emergency Fund Target: how much emergency fund you need based on yours monthly expenses, Retirement Savings Target: how much money do you need to be saved for yours retirement etc. and many more.",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"

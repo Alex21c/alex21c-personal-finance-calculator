@@ -1,4 +1,24 @@
 /**
+ * This node.js package will help you to compute following personal finance 
+ * 1. Emergency Fund Target: Calculates the target amount for an emergency fund based on monthly expenses.
+ * 2. Rule of 72: Estimates the number of years it will take for an investment to double based on a fixed annual rate of return.
+ * 3. Saving for a Specific Goal: Calculates the amount needed to be saved regularly to achieve a specific financial goal.
+ * 4. Debt Payoff Plan: Calculates the time to pay off a debt given regular payments.
+ * 5. Return on Investment (ROI): Measures the profitability of an investment relative to its cost.
+ * 6. Future Value of a Single Sum (lumpsum): Calculates the future value of a lump sum investment after a certain number of years.
+ * 7. Compound Interest with Regular Contributions: Determines the future value of investments with regular contributions.
+ * 8. Retirement Savings Target: Determines the target amount to be saved for retirement.
+ * 9. Savings Rate: Calculates the percentage of income saved or invested regularly.
+ * 10. Asset Allocation Percentage: Helps in determining the proportion of assets to be allocated to different investment types.
+ * 
+ * Author: Abhishek kumar
+ * LinkedIN: https://www.linkedin.com/in/alex21c/
+ * Initial Release: May-05-2024
+ * License : MIT
+ * 
+ */
+
+/**
  * 1. Emergency Fund Target:
  *  Emergency Fund Target = Monthly Expenses × Number of Months
  *  - Calculates the target amount for an emergency fund based on monthly expenses.
@@ -82,16 +102,16 @@ export function roi(netProfit=null,  costOfInvestment=null){
  *  - n is the number of years
  *  - Calculates the future value of a lump sum investment after a certain number of years.
  * @param {number} presentValue : e.g. ₹2 Lakh
- * @param {number} annaulInterestRate : e.g. 10%
+ * @param {number} annualInterestRate : e.g. 10%
  * @param {number} numberOfYears : e.g. 10
  * @returns {number | undefined} future value
  */
-export function futureValueOfLumpSum(presentValue=null, annaulInterestRate=null, numberOfYears=null){
-  if(presentValue==null || annaulInterestRate==null || numberOfYears==null){
+export function futureValueOfLumpSum(presentValue=null, annualInterestRate=null, numberOfYears=null){
+  if(presentValue==null || annualInterestRate==null || numberOfYears==null){
     return undefined;
   }
   
-  return (presentValue * ((1 + (annaulInterestRate/100))**numberOfYears)).toFixed(2);
+  return (presentValue * ((1 + (annualInterestRate/100))**numberOfYears)).toFixed(2);
 }
 
 /**
